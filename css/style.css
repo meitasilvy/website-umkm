@@ -57,6 +57,15 @@ h1 {
   margin-top: 20px;
 }
 
+.foto-tentang {
+  display: block;
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
 .products {
   margin-top: 18px;
 }
