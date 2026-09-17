@@ -7,39 +7,85 @@
         <link rel="stylesheet" href="css/style.css"/>
     </head>
 <body>
-    <main class="page">
-        <section class="hero">
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+   
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigasi utama">
+            <a class="brand" href="index.html">Risol Gurih</a>
+            <ul>
+                <li><a aria-current="page" href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="#profil">Profil Usaha</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <main id="konten" class="page">
+        <section class="hero" aria-labelledby="hero-title">
             <p class="eyebrow">UMKM Pekalongan</p>
-            <h1>Risol Gurih</h1>
+            <h1 id="hero-title">Risol Gurih</h1>
             <p class="lead">
-                Risol lezat dan gurih dengan isian ayam dan mayo, cocok untuk teman santai.
+                Risol lezat dan gurih dengan isian ayam dan mayo, cocok untuk temani kamu nugas.
             </p>
-            <button id="promoButton" class="cta-button">
+            <button id="promoButton" class="cta-button" type="button">
                 Lihat promo hari ini
             </button>
+            <img src="assets/images/etalase-risol.jpg" alt="Etalase Risol Gurih" />
         </section>
 
-        <section class="products" aria-label="Produk unggulan">
-            <article class="product-card">
-                <h2>Risol Ayam</h2>
-                <p>Risol dengan isian ayam suwir pedas yang gurih dan lezat.</p>
-                <span>Rp4.000</span>
-            </article>
-
-            <article class="product-card">
-                <h2>Risol Mayo</h2>
-                <p>Risol renyah dengan isian mayo yang creamy dan gurih.</p>
-                <span>Rp3.000</span>
-            </article>
+        <section id="profil" class="info">
+            <h2>Profil Usaha</h2>
+            <p>
+                Risol Gurih merupakan UMKM yang menyediakan berbagai pilihan risol
+                dengan cita rasa gurih dan lezat. Produk yang tersedia antara lain
+                Risol Ayam Suwir dan Risol Mayo.
+            </p>
         </section>
+
+
+    <section class="products" aria-labelledby="produk-title">
+    <h2 id="produk-title">Produk Unggulan</h2>
+
+    <div class="product-list">
+        <article class="product-card">
+    <img src="assets/images/Risol-ayam.jpg" alt="Risol ayam suwir pedas">
+    <h3>Risol Ayam Suwir</h3>
+    <p>Risol isi ayam suwir pedas daun jeruk yang nikmat.</p>
+    <p class="price">Rp4.000</p>
+</article>
+
+        <article class="product-card">
+    <img src="assets/images/Risol-mayo.jpg" alt="Risol mayo berisi mayo, telur, dan sosis">
+    <h3>Risol Mayo</h3>
+    <p>Dengan rasa yang Creamy, gurih, dan nikmat.
+Rasakan perpaduan mayo, telur, dan sosis dalam satu gigitan!</p>
+    <p class="price">Rp3.000</p>
+
+            </article>
+        </div>
+    </section>
 
         <section class="info">
             <h2>Informasi UMKM</h2>
-            <p><strong>Jam Buka:</strong> 09.00–21.00</p>
-            <p><strong>Lokasi:</strong> Pekalongan, Jawa Tengah</p>
+            <p>Jam Buka: 09.00–21.00</p>
+            <p>Lokasi: Pekalongan, Jawa Tengah</p>
         </section>
+
+       <section id="kontak" class="info">
+    <h2>Kontak Singkat</h2>
+    <p>Lokasi: Pekalongan, Jawa Tengah</p>
+    <p>Jam Layanan: 09.00–21.00</p>
+    <p>
+        WhatsApp:
+        <a href="https://wa.me/6282123456789">Hubungi Risol Gurih melalui WhatsApp</a>
+    </p>
+</section>
     </main>
 
-    <script src="js/script.js"></script>
+    <footer class="site-footer">
+        <p>&copy; by Meylicious. Data pada halaman ini bersifat dummy.</p>
+    </footer>
+<script src="js/script.js"></script>    
 </body>
 </html>

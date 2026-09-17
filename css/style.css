@@ -3,6 +3,8 @@ body {
   background: #fff5e1;
   color: #4a3022;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  padding: 1rem;
 }
 
 .page {
@@ -46,17 +48,112 @@ h1 {
   cursor: pointer;
 }
 
+.hero img {
+  display: block;
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
   margin-top: 18px;
+}
+
+.product-list {
+  margin-top: 16px;
 }
 
 .product-card {
   border: 1px solid #ead09a;
   border-radius: 18px;
   background: white;
-  padding: 18px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 16px;
   box-shadow: 0 10px 30px rgb(74 48 34 / 10%);
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.price {
+  font-weight: 800;
+  color: #d98245;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  padding: 8px 12px;
+  color: white;
+  background: #2f2118;
+}
+
+.skip-link:focus {
+  top: 8px;
+  left: 8px;
+}
+
+.site-header {
+  padding: 16px 20px;
+  background: white;
+  border-bottom: 1px solid #dccbbc;
+}
+
+.nav {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #4b2715;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.nav a {
+  display: inline-block;
+}
+
+.nav a[aria-current="page"] {
+  font-weight: 800;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #c2410c;
+  outline-offset: 3px;
+}
+
+.info {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #f4dfad;
+}
+
+.site-footer {
+  padding: 24px 20px;
+  color: white;
+  text-align: center;
+  background: #2f2118;
 }
