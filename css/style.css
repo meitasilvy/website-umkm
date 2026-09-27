@@ -232,3 +232,39 @@ td {
   margin: 0 auto;
   border-radius: 12px;
 }
+.field { 
+    margin-bottom: 16px; 
+}
+
+.field label { 
+    display: block; 
+    margin-bottom: 6px; 
+}
+
+#form-kontak {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #dccbbc;
+    border-radius: 18px;
+}
+
+fieldset {
+    margin: 0 0 16px;
+    padding: 16px;
+    border: 1px solid #e8bcbc;
+    border-radius: 12px;
+    background: #fffafa;
+}
+
+fieldset legend {
+    padding: 0 8px;
+    font-weight: 700;
+}
+
+#preview-form {
+    padding: 16px;
+    white-space: pre-wrap;
+    background: white;
+    border: 1px solid #dccbbc;
+    border-radius: 12px;
+}
