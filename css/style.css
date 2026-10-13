@@ -13,7 +13,7 @@
   --space-4: 1.5rem;
   --space-5: 2rem;
   --radius-sm: 0.625rem;
-  --radius-md: 0.1rem;
+  --radius-md: 0.75rem;
   --shadow-card: 0 0.5rem 1.5rem rgb(47 33 24 / 0.1);
 }
 
@@ -35,12 +35,15 @@ body {
 }
 
 .hero {
-  padding: var(--space-5);
-  color: var(--color-surface);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-3);
   background: var(--color-primary);
   border-radius: var(--radius-md);
+  color: #fff1d6;
 }
-
 .eyebrow {
   color: var(--color-primary);
   font-weight: 800;
@@ -71,22 +74,9 @@ li {
   max-width: 560px;
 }
 
-.hero img {
-  display: block;
-  width: 400px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-top: 20px;
-}
-
-.foto-tentang {
-  display: block;
-  width: 400px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-top: 20px;
+.hero-image {
+ width: 100%; 
+ border-radius: var(--radius-md); 
 }
 
 .products {
@@ -152,29 +142,30 @@ button:hover {
   border-bottom: 1px solid var(--color-border);
 }
 
-.nav,
-.page {
-  width: min(100% - 2rem, 60rem);
-  margin-inline: auto;
+.nav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
 }
 
 .brand {
-  display: inline-block;
-  margin-bottom: var(--space-2);
-  color: var(--color-text);
-  font-weight: 800;
-  text-decoration: none;
+  margin-bottom: 0;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 
 .nav ul {
-  padding: 0;
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .nav li {
-  display: inline-block;
-  margin: 0 var(--space-2) var(--space-1) 0;
+  margin: 0;
 }
 
 .nav a[aria-current="page"] {
@@ -187,13 +178,20 @@ button:hover {
 }
 
 .page {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--space-4);
   padding-block: var(--space-5);
 }
 
 a { 
-  color: var(--color-primary); }
+  color: var(--color-primary); 
+}
+
 a:hover { 
-  color: var(--color-primary-strong); }
+  color: var(--color-primary-strong); 
+}
+
 :focus-visible { 
   outline: 3px solid var(--color-focus); 
   outline-offset: 3px; }
@@ -213,8 +211,15 @@ a:hover {
   border-bottom: 0;
 }
 
-.gallery-list {
-  margin-top: 16px;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
 }
 
 .product-card,
@@ -227,6 +232,36 @@ form {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: 0.2rem 0.65rem;
+  color: var(--color-primary-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: #fef3c7;
+  border-radius: 999px;
+}
+
+.product-card h3 {
+  margin-top: 2.5rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 figure {
@@ -265,6 +300,12 @@ th {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.media-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
 img {
@@ -343,4 +384,68 @@ audio {
     background: #ffffff;
     border: 1px solid #dccbbc;
     border-radius: 18px;
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+}
+
+.tentang-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.tentang-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tentang-media {
+  position: relative;
+}
+
+.badge-tentang {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: 0.25rem var(--space-2);
+  color: var(--color-primary-strong);
+  font-size: 0.875rem;
+  font-weight: 800;
+  background: #fef3c7;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.foto-tentang {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.nilai-list {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nilai-list li {
+  flex: 1 1 12rem;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  margin: 0;
 }
