@@ -23,7 +23,9 @@
   box-sizing: border-box;
 }
 
-html { color-scheme: light; }
+html {
+  color-scheme: light;
+}
 
 body {
   margin: 0;
@@ -36,7 +38,7 @@ body {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
   gap: var(--space-4);
   align-items: center;
   padding: var(--space-3);
@@ -44,6 +46,7 @@ body {
   border-radius: var(--radius-md);
   color: #fff1d6;
 }
+
 .eyebrow {
   color: var(--color-primary);
   font-weight: 800;
@@ -56,8 +59,9 @@ body {
 }
 
 h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(1.75rem, 1.25rem + 3vw, 3rem);
 }
+
 h1,
 h2,
 h3 {
@@ -75,8 +79,8 @@ li {
 }
 
 .hero-image {
- width: 100%; 
- border-radius: var(--radius-md); 
+  width: 100%;
+  border-radius: var(--radius-md);
 }
 
 .products {
@@ -142,26 +146,26 @@ button:hover {
   border-bottom: 1px solid var(--color-border);
 }
 
-.nav {
-  display: flex;
-  gap: var(--space-3);
-  align-items: center;
-  justify-content: space-between;
-}
-
 .brand {
   margin-bottom: 0;
   font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
 .nav ul {
   display: flex;
+  flex-direction: column;
   gap: var(--space-2);
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
   list-style: none;
+  padding-left: 0;
 }
 
 .nav li {
@@ -178,23 +182,23 @@ button:hover {
 }
 
 .page {
-  width: 100%;
-  max-width: 100%;
-  padding: var(--space-4);
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
   padding-block: var(--space-5);
 }
 
-a { 
-  color: var(--color-primary); 
+a {
+  color: var(--color-primary);
 }
 
-a:hover { 
-  color: var(--color-primary-strong); 
+a:hover {
+  color: var(--color-primary-strong);
 }
 
-:focus-visible { 
-  outline: 3px solid var(--color-focus); 
-  outline-offset: 3px; }
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
 
 .info {
   margin-top: 18px;
@@ -211,14 +215,10 @@ a:hover {
   border-bottom: 0;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-3);
-}
+.product-grid,
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-3);
 }
 
@@ -309,6 +309,7 @@ th {
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
@@ -380,10 +381,10 @@ audio {
 }
 
 #form-kontak {
-    padding: 24px;
-    background: #ffffff;
-    border: 1px solid #dccbbc;
-    border-radius: 18px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #dccbbc;
+  border-radius: 18px;
 }
 
 .form-actions {
@@ -396,7 +397,7 @@ audio {
 
 .tentang-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
   gap: var(--space-4);
   align-items: center;
 }
@@ -415,9 +416,10 @@ audio {
   position: absolute;
   top: var(--space-2);
   left: var(--space-2);
-  padding: 0.25rem var(--space-2);
+  max-width: calc(100% - 1rem);
+  padding: 0.25rem 0.5rem;
   color: var(--color-primary-strong);
-  font-size: 0.875rem;
+  font-size: clamp(0.7rem, 3vw, 0.875rem);
   font-weight: 800;
   background: #fef3c7;
   border-radius: 999px;
@@ -448,4 +450,50 @@ audio {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   margin: 0;
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.table-scroll table {
+  min-width: 40rem;
+}
+
+@media (min-width: 42rem) {
+  .nav ul {
+    flex-direction: row;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 60rem) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
